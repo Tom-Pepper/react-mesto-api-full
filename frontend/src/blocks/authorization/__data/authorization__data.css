@@ -1,0 +1,14 @@
+.authorization__data {
+  background-color: #000000;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0;
+  border: 0;
+  border-bottom: 2px solid #CCCCCC;
+
+  color: #CCCCCC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.2;
+}

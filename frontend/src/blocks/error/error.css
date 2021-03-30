@@ -1,0 +1,8 @@
+.error {
+  position: relative;
+  margin: 100px auto;
+  max-width: 358px;
+  height: 100vh;
+  color: #ffffff;
+  text-align: center;
+}

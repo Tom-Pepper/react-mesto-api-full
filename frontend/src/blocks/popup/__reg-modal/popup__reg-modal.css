@@ -1,0 +1,9 @@
+.popup__reg-modal {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+
+  padding: 19px 36px;
+  width: 430px;
+  height: 330px;
+}
