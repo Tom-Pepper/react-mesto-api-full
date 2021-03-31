@@ -25,11 +25,17 @@ router.post('/cards',
     }),
   }),
   createCard);
-router.get('/cards/:cardId', getCard);
+router.get('/cards/:cardId',
+  celebrate({
+    body: Joi.object().keys({
+      cardId: Joi.string().required().length(24).hex(),
+    }),
+  }),
+  getCard);
 router.delete('/cards/:cardId',
   celebrate({
     params: Joi.object().keys({
-      cardId: Joi.string().required().hex(),
+      cardId: Joi.string().required().length(24).hex(),
     }),
   }),
   deleteCard);

@@ -19,7 +19,13 @@ const getCard = (req, res, next) => {
     .then((card) => {
       res.status(200).send({ card });
     })
-    .catch((err) => next(err));
+    .catch((err) => {
+      if (err.kind === 'ObjectId') {
+        next(new ValidationError('Невалидный id карточки'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 const createCard = (req, res, next) => {

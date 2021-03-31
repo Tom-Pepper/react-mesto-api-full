@@ -14,7 +14,13 @@ const {
 
 router.get('/users/me', getMyProfile);
 router.get('/users', getUsers);
-router.get('/users/:id', getProfile);
+router.get('/users/:id',
+  celebrate({
+    body: Joi.object().keys({
+      id: Joi.string().required().length(24).hex(),
+    }),
+  }),
+  getProfile);
 router.patch('/users/me',
   celebrate({
     body: Joi.object().keys({

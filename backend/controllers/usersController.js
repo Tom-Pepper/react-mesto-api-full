@@ -49,7 +49,7 @@ const createUser = (req, res, next) => {
       password: hash,
     }))
     .then((user) => {
-      res.status(200).send({ user });
+      res.status(200).send({ message: `Пользователь ${user.name} успешно зарегистрирован. Почта:  ${user.email}` });
     })
     .catch((err) => {
       if (err.code === MONGO_DUPLICATE_ERROR_CODE) {
